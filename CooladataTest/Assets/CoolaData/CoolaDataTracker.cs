@@ -10,7 +10,7 @@ namespace com.cooladata.tracking.sdk.unity{
 	/// </summary>
 	public class CoolaDataTracker : MonoBehaviour {
 
-		const string TrackerVersion = "v1.0.2";
+		const string TrackerVersion = "v1.0.3";
 
 		// OperationCompleteCallback signature
 		public delegate void OperationCompleteCallback (string message);
@@ -464,13 +464,13 @@ namespace com.cooladata.tracking.sdk.unity{
 			}
 			// Device fields
 			if( SystemInfo.deviceName != null) data["device_name"] = SystemInfo.deviceName; 
-			data["device_type"] = SystemInfo.deviceType.ToString(); 
+
 			// Time fields
 			data["time_in_app"] = Math.Round( System.Convert.ToDouble(Time.time) * 1000 ).ToString();
 
 			// Device extra information
 			data["device_name"] = SystemInfo.deviceName;
-			data["device_model"] = SystemInfo.deviceModel;
+			data["session_model"] = SystemInfo.deviceModel;
 			data["device_type"] = SystemInfo.deviceType.ToString();
 			data["device_unique_identifier"] = SystemInfo.deviceUniqueIdentifier;
 
